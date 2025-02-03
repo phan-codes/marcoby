@@ -19,7 +19,7 @@ const NavBar = () => {
 	return (
 		<div className="fixed right-0 left-0 z-50 bg-white px-5 flex items-center justify-between shadow-sm">
 			<a href="/">
-				<img src="../src/assets/logo.jpg" alt="logo" className="w-20 h-20" />
+				<img src="src/assets/logo.jpg" alt="logo" className="w-20 h-20" />
 			</a>
 			<ul className="hidden text-sm md:inline-flex">
 				<li className="px-2">

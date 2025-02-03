@@ -33,7 +33,7 @@ const About = () => {
 			</div>
 
 			<div className="basis-[50%] flex justify-center items-center">
-				<img src="../src/assets/logo.jpg" alt="logo" />
+				<img src="src/assets/logo.jpg" alt="logo" />
 			</div>
 		</section>
 	);
