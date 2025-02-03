@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "NotoSans";
+	src: url("assets/fonts/Noto_Sans/NotoSans-Regular.woff2") format("woff2");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "OpenSans";
+	src: url("assets/fonts/Open_Sans/OpenSans-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("assets/fonts/Roboto/Roboto-Bold.woff2") format("woff2");
+	font-weight: 700;
+}
+
+@theme {
+	--breakpoint-sm: 376px;
+	--breakpoint-md: 664px;
+	--breakpoint-lg: 976px;
+	--breakpoint-xl: 1440px;
+
+	/* FONTS */
+	--font-Noto: "NotoSans", "sans-serif";
+	--font-OpenSans: "OpenSans", "NotoSans", "sans-serif";
+	--font-Roboto: "Roboto", "NotoSans", "sans-serif";
+}
