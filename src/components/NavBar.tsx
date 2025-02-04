@@ -20,7 +20,7 @@ const NavBar = () => {
 	const date = new Date().getFullYear();
 
 	return (
-		<div className="fixed right-0 left-0 z-50 bg-white px-5 flex items-center justify-between shadow-sm">
+		<nav className="fixed right-0 left-0 z-50 bg-white px-5 flex items-center justify-between shadow-sm">
 			<a href="/">
 				<img src={logo} alt="logo" className="w-20 h-20" />
 			</a>
@@ -84,7 +84,7 @@ const NavBar = () => {
 					&copy; Marcoby {date}
 				</footer>
 			</div>
-		</div>
+		</nav>
 	);
 };
 
