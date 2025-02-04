@@ -2,7 +2,7 @@ import React from "react";
 
 const Solutions = () => {
 	return (
-		<section className="pt-36 flex flex-col items-center px-3">
+		<section className="pt-10 flex flex-col items-center px-3 md:pt-32">
 			<div className="text-center gap-2">
 				<h1 className="font-Roboto text-[30px]">Our Core Solutions</h1>
 				<p className="text-sm text-gray-600">Intergrated platform designed to transform your business operations</p>

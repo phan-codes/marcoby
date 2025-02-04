@@ -3,7 +3,7 @@ import aboutImg from "../assets/images/logo.png";
 
 const About = () => {
 	return (
-		<section className="mt-36 flex flex-col-reverse md:flex-row">
+		<section className="mt-10 flex flex-col-reverse md:flex-row md:mt-32">
 			<div className="bg-[#f3f9f5] basis-[50%] py-28 flex flex-col items-center text-center px-3 gap-y-5 md:items-start md:text-left">
 				<h1 className="bg-white rounded-full px-4 py-1 font-OpenSans text-[#006837]">Our Philosophy</h1>
 				<h2 className="font-Roboto tracking-wide text-xl md:text-[25px] lg:text-[30px] lg:pr-24">

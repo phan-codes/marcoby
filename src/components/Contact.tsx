@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
 	return (
-		<section className="pt-36 pb-10 flex flex-col items-center px-3 bg-[#f3f9f5]">
+		<section className="py-10 flex flex-col items-center px-3 bg-[#f3f9f5] md:pt-32">
 			<div className="text-center gap-2">
 				<h1 className="font-Roboto text-[30px]">Get in Touch</h1>
 				<p className="text-sm text-gray-600">
