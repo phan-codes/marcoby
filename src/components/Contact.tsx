@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
 	return (
-		<section className="pt-36 flex flex-col items-center px-3 bg-[#f3f9f5]">
+		<section className="pt-36 pb-10 flex flex-col items-center px-3 bg-[#f3f9f5]">
 			<div className="text-center gap-2">
 				<h1 className="font-Roboto text-[30px]">Get in Touch</h1>
 				<p className="text-sm text-gray-600">
@@ -10,7 +10,7 @@ const Contact = () => {
 				</p>
 			</div>
 
-			<div className="flex flex-col mt-5 w-full md:mt-20 md:flex-row">
+			<div className="flex flex-col-reverse mt-5 w-full md:mt-20 md:flex-row">
 				<div className="basis-[50%] py-10 flex flex-col items-center text-center px-5 gap-y-7 md:items-start md:text-left">
 					<div className="flex flex-col gap-y-2">
 						<h1 className="font-Roboto">Phone</h1>
