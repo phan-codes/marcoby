@@ -136,21 +136,21 @@ const NavBar = ({ scrollToSection, services, hero, contact, about, resources }) 
 							Home
 						</button>
 					</li>
-					<li className="px-2 py-2 cursor-pointer flex items-center group">
+					<li className="px-2 py-2 cursor-pointer">
 						<button
 							className="hover:text-[#00A651] duration-300 cursor-pointer"
 							onClick={() => scrollToSection(services)}>
 							Services
 						</button>
 					</li>
-					<li className="px-2 py-2 rounded-full cursor-pointer">
+					<li className="px-2 py-2 cursor-pointer">
 						<button
 							className="hover:text-[#00A651] duration-300 cursor-pointer"
 							onClick={() => scrollToSection(resources)}>
 							Resorces & Tools
 						</button>
 					</li>
-					<li className="px-2 py-2 rounded-full cursor-pointer">
+					<li className="px-2 py-2 cursor-pointer">
 						<button className="hover:text-[#00A651] duration-300 cursor-pointer" onClick={() => scrollToSection(about)}>
 							About
 						</button>
