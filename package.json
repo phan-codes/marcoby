@@ -2,6 +2,7 @@
 	"name": "marcoby",
 	"private": true,
 	"homepage": "https://www.marcoby.com",
+	"author": "marcoby team ng/us",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
@@ -12,12 +13,12 @@
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.3",
+		"axios": "^1.7.9",
 		"framer-motion": "^12.4.1",
 		"lucide-react": "^0.475.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"react-router-dom": "^7.1.5",
-		"react-router-hash-link": "^2.4.3",
+		"react-router-dom": "^7.4.1",
 		"tailwindcss": "^4.0.3"
 	},
 	"devDependencies": {

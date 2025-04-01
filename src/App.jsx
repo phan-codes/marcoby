@@ -5,10 +5,13 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import Services from "./components/Services";
+import Reviews from "./components/Reviews";
 import NetworkMetrics from "./components/NetworkMetrics";
 import EmailSecurity from "./components/EmailSecurity";
 import SiteChecker from "./components/SiteChecker";
 import NetworkNewsFeed from "./components/NetworkNewsFeed";
+import Partners from "./components/Partners";
+import Partners2 from "./components/Partner2";
 
 function App() {
 	const hero = useRef(null);
@@ -25,7 +28,7 @@ function App() {
 	};
 
 	return (
-		<div className="relative font-Noto text-black dark:text-gray-200 dark:bg-black bg-white flex flex-col">
+		<div className="relative font-Noto text-black dark:text-gray-200 dark:bg-black bg-white flex flex-col overflow-x-hidden">
 			<NavBar
 				scrollToSection={scrollToSection}
 				services={services}
@@ -36,8 +39,11 @@ function App() {
 			/>
 			<div>
 				<Hero elementRef={hero} />
+				<Partners />
+				<Partners2 />
 				<Services elementRef={services} />
 				<About elementRef={about} />
+				<Reviews />
 				<NetworkMetrics elementRef={resources} />
 				<SiteChecker />
 				<NetworkNewsFeed />

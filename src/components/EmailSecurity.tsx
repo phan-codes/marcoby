@@ -30,16 +30,20 @@ const EmailSecurity = () => {
 			</Reveal>
 
 			<div className="flex flex-col gap-y-7 gap-x-7 mt-20 md:flex-row">
-				{protocolList.map((protocol) => (
-					<Reveal>
-						<div
-							key={protocol.name}
-							className="flex flex-col items-start p-5 gap-4 border-none rounded-md shadow-md basis-[33.3%] dark:shadow-gray-900 duration-200 hover:border hover:border-solid hover:border-[#00A651]">
+				{protocolList.map((protocol, index) => (
+					<div
+						key={index}
+						className="flex flex-col items-start p-5 gap-4 border-none rounded-md shadow-md basis-[33.3%] dark:shadow-gray-900 duration-200 hover:border hover:border-solid hover:border-[#00A651]">
+						<Reveal>
 							<div className="text-[#00A651]">{protocol.icon}</div>
+						</Reveal>
+						<Reveal>
 							<h1 className="font-Roboto">{protocol.name}</h1>
+						</Reveal>
+						<Reveal>
 							<p className="text-xs text-gray-600 leading-5 dark:text-gray-400">{protocol.description}</p>
-						</div>
-					</Reveal>
+						</Reveal>
+					</div>
 				))}
 			</div>
 		</section>

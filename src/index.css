@@ -30,4 +30,29 @@
 	--font-Noto: "NotoSans", "sans-serif";
 	--font-OpenSans: "OpenSans", "NotoSans", "sans-serif";
 	--font-Roboto: "Roboto", "NotoSans", "sans-serif";
+
+	/* ANIMATION */
+	--animate-slide: slide 20s linear infinite;
+	--animate-slideRight: slideRight 20s linear infinite;
+
+	@keyframes slide {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-100%);
+		}
+	}
+	@keyframes slideRight {
+		0% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(0%);
+		}
+	}
+}
+
+@utility paused {
+	animation-play-state: paused;
 }

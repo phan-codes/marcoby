@@ -31,20 +31,20 @@ const NavBar = ({ scrollToSection, services, hero, contact, about, resources }) 
 
 	const servicesList = [
 		{
-			name: "Nexus",
-			description: "Headquarters-as-a-Service Platform",
-			href: "www.nexus.marcoby.com",
+			name: "Pulse",
+			description: "Value-added Reseller Platform",
+			href: "/pulse",
 		},
 
 		{
-			name: "Calyst",
+			name: "Catalyst",
 			description: "Managed IT Services",
-			href: "www.catalyst.marcoby.com",
+			href: "/catalyst",
 		},
 		{
-			name: "Pulse",
-			description: "Value-added Reseller Platform",
-			href: "www.pulse.marcoby.com",
+			name: "Nexus",
+			description: "Headquarters-as-a-Service Platform",
+			href: "/nexus",
 		},
 	];
 
@@ -60,7 +60,7 @@ const NavBar = ({ scrollToSection, services, hero, contact, about, resources }) 
 
 			{/* NAV LINKS */}
 
-			<ul className="hidden text-sm md:inline-flex gap-x-4">
+			<ul className="hidden text-sm md:inline-flex gap-x-7">
 				<li>
 					<button className="hover:text-[#00A651] duration-300 cursor-pointer" onClick={() => scrollToSection(hero)}>
 						Home
@@ -82,7 +82,8 @@ const NavBar = ({ scrollToSection, services, hero, contact, about, resources }) 
 							<a
 								href={service.href}
 								key={service.name}
-								className="inline-block w-full px-5 py-4 hover:bg-[#e4f0ec] group rounded-lg dark:hover:bg-[#e4f0ec20]">
+								className="inline-block w-full px-5 py-4 hover:bg-[#e4f0ec] group rounded-lg dark:hover:bg-[#e4f0ec20]"
+								target="_blank">
 								<h1 className="font-Roboto group-hover:text-[#00A651]">{service.name}</h1>
 								<p className="text-xs text-gray-600 leading-5 dark:text-gray-400">{service.description}</p>
 							</a>

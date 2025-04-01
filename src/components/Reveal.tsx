@@ -16,12 +16,12 @@ const Reveal = ({ children }: { children: React.ReactNode }) => {
 		<motion.div
 			ref={ref}
 			variants={{
-				hidden: { opacity: 0, x: 5 },
+				hidden: { opacity: 0, x: 30 },
 				visible: { opacity: 1, x: 0 },
 			}}
 			initial="hidden"
 			animate={mainControls}
-			transition={{ duration: 0.6, delay: 0.25 }}>
+			transition={{ duration: 0.7, delay: 0.25 }}>
 			{children}
 		</motion.div>
 	);

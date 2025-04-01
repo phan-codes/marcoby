@@ -24,7 +24,7 @@ const NetworkNewsFeed = () => {
 							Enter RSS feed URL
 						</label>
 					</div>
-					<button className="flex justify-center items-center px-5 py-3 rounded-md bg-[#006837] text-xs font-OpenSans text-white hover:bg-[#00A651] duration-300">
+					<button className="flex justify-center items-center px-5 py-3 rounded-md bg-[#006837] text-xs font-OpenSans text-white hover:bg-[#00A651] duration-300 cursor-pointer">
 						<SquareMousePointer className="w-6 h-6 mr-1" />
 						Fetch
 					</button>

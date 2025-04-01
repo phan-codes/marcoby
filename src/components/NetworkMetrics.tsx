@@ -1,31 +1,31 @@
 import React from "react";
 import Reveal from "./Reveal";
-import { Download, Layers, Signal, Upload, Wifi } from "lucide-react";
+import { Download, Signal, Upload, Wifi } from "lucide-react";
 
 const NetworkMetrics = ({ elementRef }) => {
 	const performanceList = [
 		{
 			name: "Download Speed",
-			record: 25,
+			record: `${25}+ Mbps`,
 			description: "Recommend for small businesses",
 			icon: <Download className="w-8 h-8" />,
 		},
 
 		{
 			name: "Upload Speed",
-			record: 25,
+			record: `${10}+ Mbps`,
 			description: "Ideal for video conferencing",
 			icon: <Upload className="w-8 h-8" />,
 		},
 		{
 			name: "Ping",
-			record: 25,
+			record: `${20}-${50} ms`,
 			description: "Optimal latency range",
 			icon: <Signal className="w-8 h-8" />,
 		},
 		{
 			name: "Jitter",
-			record: 25,
+			record: `<${30} ms`,
 			description: "For stable connections",
 			icon: <Wifi className="w-8 h-8" />,
 		},
@@ -47,10 +47,18 @@ const NetworkMetrics = ({ elementRef }) => {
 					<div
 						key={performance.name}
 						className="flex flex-col items-start p-5 gap-4 border-none rounded-md shadow-md basis-[25%] w-full dark:shadow-gray-900 duration-200 hover:border hover:border-solid hover:border-[#00A651]">
-						<div className="text-[#00A651]">{performance.icon}</div>
-						<h1 className="font-Roboto">{performance.name}</h1>
-						<h2 className="font-Roboto text-[25px] text-[#00A651]">{performance.record}+ Mbps</h2>
-						<p className="text-xs text-gray-600 leading-5 dark:text-gray-400">{performance.description}</p>
+						<Reveal>
+							<div className="text-[#00A651]">{performance.icon}</div>
+						</Reveal>
+						<Reveal>
+							<h1 className="font-Roboto">{performance.name}</h1>
+						</Reveal>
+						<Reveal>
+							<h2 className="font-Roboto text-[25px] text-[#00A651]">{performance.record}</h2>
+						</Reveal>
+						<Reveal>
+							<p className="text-xs text-gray-600 leading-5 dark:text-gray-400">{performance.description}</p>
+						</Reveal>
 					</div>
 				))}
 			</div>

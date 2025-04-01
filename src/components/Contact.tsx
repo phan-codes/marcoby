@@ -7,14 +7,14 @@ const Contact = ({ elementRef }) => {
 	const contactDetails = [
 		{
 			type: "Phone",
-			details: "+1 (555) 123-4567",
-			href: "tel:+15551234567",
+			details: "+1 (909) 280 0170",
+			href: "tel:+19092800170",
 			icon: <Phone className="w-8 h-8" />,
 		},
 		{
 			type: "Email",
-			details: "contact@marcoby.com",
-			href: "mailto:contact@marcoby.com",
+			details: "learnmore@marcoby.com",
+			href: "mailto:learnmore@marcoby.com",
 			icon: <Mail className="w-8 h-8" />,
 		},
 		{
@@ -67,7 +67,7 @@ const Contact = ({ elementRef }) => {
 									name="name"
 									required
 									placeholder="Your Name"
-									className="p-2 mb-6 peer w-full placeholder-transparent text-black bg-white outline-none caret-black peer border border-gray-200 rounded-md focus:shadow-md dark:caret-gray-400 dark:bg-transparent dark:border dark:border-gray-900 dark:focus:border-gray-800 dark:focus:shadow-slate-900"
+									className="p-2 mb-6 peer w-full placeholder-transparent bg-white outline-none caret-black peer border border-gray-200 rounded-md focus:shadow-md dark:caret-gray-400 dark:bg-transparent dark:border dark:border-gray-900 dark:focus:border-gray-800 dark:focus:shadow-slate-900"
 								/>
 								<label
 									htmlFor="name"
@@ -83,7 +83,7 @@ const Contact = ({ elementRef }) => {
 									name="email"
 									required
 									placeholder="Your Email*"
-									className="p-2 mb-6 peer w-full placeholder-transparent text-black bg-white outline-none caret-black border border-gray-200 rounded-md focus:shadow-lg dark:caret-gray-400 dark:bg-transparent dark:border dark:border-gray-900 dark:focus:border-gray-800 dark:focus:shadow-slate-900"
+									className="p-2 mb-6 peer w-full placeholder-transparent bg-white outline-none caret-black border border-gray-200 rounded-md focus:shadow-lg dark:caret-gray-400 dark:bg-transparent dark:border dark:border-gray-900 dark:focus:border-gray-800 dark:focus:shadow-slate-900"
 								/>
 								<label
 									htmlFor="email"
@@ -98,7 +98,7 @@ const Contact = ({ elementRef }) => {
 									type="text"
 									name="subject"
 									placeholder="Subject"
-									className="p-2 mb-6 peer w-full placeholder-transparent text-black bg-white outline-none caret-black peer border border-gray-200 rounded-md focus:shadow-lg dark:caret-gray-400 dark:bg-transparent dark:border dark:border-gray-900 dark:focus:border-gray-800 dark:focus:shadow-slate-900"
+									className="p-2 mb-6 peer w-full placeholder-transparent bg-white outline-none caret-black peer border border-gray-200 rounded-md focus:shadow-lg dark:caret-gray-400 dark:bg-transparent dark:border dark:border-gray-900 dark:focus:border-gray-800 dark:focus:shadow-slate-900"
 								/>
 								<label
 									htmlFor="subject"
@@ -113,7 +113,7 @@ const Contact = ({ elementRef }) => {
 									name="message"
 									required
 									placeholder="Message"
-									className="text-black outline-none p-3 mb-6 caret-black peer w-full border bg-white border-gray-200 min-h-44 placeholder-transparent rounded-md focus:shadow-lg dark:caret-gray-400 dark:bg-transparent dark:border dark:border-gray-900 dark:focus:border-gray-800 dark:focus:shadow-slate-900"
+									className="outline-none p-3 mb-6 caret-black peer w-full border bg-white border-gray-200 min-h-44 placeholder-transparent rounded-md focus:shadow-lg dark:caret-gray-400 dark:bg-transparent dark:border dark:border-gray-900 dark:focus:border-gray-800 dark:focus:shadow-slate-900"
 								/>
 								<label
 									htmlFor="message"
