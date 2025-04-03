@@ -1,107 +1,88 @@
 import React from "react";
 import { useState } from "react";
 import logo from "../assets/images/logo.png";
-import { ChevronDown } from "lucide-react";
+import { BookOpenText, ChevronDown, Contact, Globe, GraduationCap, House, ShieldPlus, User } from "lucide-react";
 import ThemeButton from "./ThemeButton";
+import EcosystemDropDown from "./DropDowns/EcosystemDropDown";
+import LearnDropDown from "./DropDowns/LearnDropDown";
+import SolutionDropDown from "./DropDowns/SolutionDropDown";
+import AboutDropDown from "./DropDowns/AboutDropDown";
+import CareerDropDown from "./DropDowns/CareerDropDown";
+import EcosystemDropDownSS from "./DropDownSS/EcosystemDropDownSS";
+import SolutionDropDownSS from "./DropDownSS/SolutionDropDownSS";
 
-const NavBar = ({ scrollToSection, services, hero, contact, about, resources }) => {
-	const [isServiceModal, setIsServiceModal] = useState<boolean>();
-
-	const handleIsServiceModal = () => {
-		setIsServiceModal(!isServiceModal);
-	};
-
+const NavBar = ({ scrollToSection, hero, contact }) => {
 	// ! FOR CLICK EVENT OF HAMBURGER MENU
-
 	const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
 
 	const handleMenuShow = () => {
 		setIsMenuShown(!isMenuShown);
 	};
-	const hideMenu = () => {
-		setIsMenuShown(false);
-	};
 
-	window.addEventListener("scroll", hideMenu);
+	const [openDropdown, setOpenDropdown] = useState(null); // Store active dropdown
+
+	const toggleDropdown = (menu: any) => {
+		setOpenDropdown(openDropdown === menu ? null : menu); // Toggle only one at a time
+	};
 
 	// DATE VARIABLE FOR FOOTER
 	const date = new Date().getFullYear();
 
-	// SERVICES LIST
-
-	const servicesList = [
-		{
-			name: "Pulse",
-			description: "Value-added Reseller Platform",
-			href: "/pulse",
-		},
-
-		{
-			name: "Catalyst",
-			description: "Managed IT Services",
-			href: "/catalyst",
-		},
-		{
-			name: "Nexus",
-			description: "Headquarters-as-a-Service Platform",
-			href: "/nexus",
-		},
-	];
-
 	return (
-		<nav className="fixed right-0 left-0 z-50 bg-white px-5 flex items-center justify-between shadow-sm dark:bg-black">
+		<nav className="fixed right-0 left-0 z-3 bg-white px-5 flex items-center justify-between shadow-sm dark:bg-black lg:backdrop-blur-2xl lg:bg-white/50 lg:dark:bg-black/50">
 			{/* NAV LOGO */}
 			<a href="/">
 				<img src={logo} alt="logo" className="w-20 h-20" />
 			</a>
-			{/* THEME BUTTON */}
 
+			{/* THEME BUTTON */}
 			<ThemeButton />
 
-			{/* NAV LINKS */}
-
-			<ul className="hidden text-sm md:inline-flex gap-x-7">
+			{/* ! NAV LINKS FOR BIG SCREEN */}
+			<ul className="hidden text-sm lg:inline-flex items-center gap-x-7">
 				<li>
 					<button className="hover:text-[#00A651] duration-300 cursor-pointer" onClick={() => scrollToSection(hero)}>
 						Home
 					</button>
 				</li>
 				<li className="relative flex items-center group">
-					<button
-						className="group-hover:text-[#00A651] duration-300 cursor-pointer peer"
-						onClick={() => scrollToSection(services)}>
-						Services
-					</button>
-					<span className="group-hover:rotate-180 group-hover:text-[#00A651]">
+					<button className="group-hover:text-[#00A651] duration-300 cursor-pointer peer">About</button>
+					<span className="group-hover:rotate-180 group-hover:text-[#00A651] cursor-pointer peer">
 						<ChevronDown className="h-3 w-3" />
 					</span>
-
-					<div
-						className={`hidden bg-white absolute top-5 -left-36 w-[320px] shadow-md rounded-lg flex-col items-start text-left peer-hover:flex hover:flex dark:bg-black`}>
-						{servicesList.map((service) => (
-							<a
-								href={service.href}
-								key={service.name}
-								className="inline-block w-full px-5 py-4 hover:bg-[#e4f0ec] group rounded-lg dark:hover:bg-[#e4f0ec20]"
-								target="_blank">
-								<h1 className="font-Roboto group-hover:text-[#00A651]">{service.name}</h1>
-								<p className="text-xs text-gray-600 leading-5 dark:text-gray-400">{service.description}</p>
-							</a>
-						))}
-					</div>
+					<AboutDropDown />
 				</li>
 
-				<li>
-					<button
-						className="hover:text-[#00A651] duration-300 cursor-pointer"
-						onClick={() => scrollToSection(resources)}>
-						Resources & Tools
-					</button>
+				<li className="relative flex items-center group">
+					<button className="group-hover:text-[#00A651] duration-300 cursor-pointer peer">Ecosystem</button>
+					<span className="group-hover:rotate-180 group-hover:text-[#00A651] cursor-pointer peer">
+						<ChevronDown className="h-3 w-3" />
+					</span>
+					<EcosystemDropDown />
 				</li>
-				<li>
-					<button className="hover:text-[#00A651] duration-300 cursor-pointer" onClick={() => scrollToSection(about)}>
-						About
-					</button>
+
+				<li className="relative flex items-center group">
+					<button className="group-hover:text-[#00A651] duration-300 cursor-pointer peer">Solutions</button>
+					<span className="group-hover:rotate-180 group-hover:text-[#00A651] cursor-pointer peer">
+						<ChevronDown className="h-3 w-3" />
+					</span>
+					<SolutionDropDown />
+				</li>
+
+				<li className="relative flex items-center group">
+					<button className="group-hover:text-[#00A651] duration-300 cursor-pointer peer">Learn</button>
+					<span className="group-hover:rotate-180 group-hover:text-[#00A651] cursor-pointer peer">
+						<ChevronDown className="h-3 w-3" />
+					</span>
+					<LearnDropDown />
+				</li>
+
+				<li className="relative flex items-center group">
+					<button className="group-hover:text-[#00A651] duration-300 cursor-pointer peer">Careers</button>
+					<span className="group-hover:rotate-180 group-hover:text-[#00A651] cursor-pointer peer">
+						<ChevronDown className="h-3 w-3" />
+					</span>
+					<CareerDropDown />
 				</li>
 
 				<li>
@@ -109,11 +90,14 @@ const NavBar = ({ scrollToSection, services, hero, contact, about, resources }) 
 						Contact
 					</button>
 				</li>
+
+				<li>
+					<button className="duration-300 cursor-pointer px-4 py-2 bg-[#00A651] rounded-full">Login</button>
+				</li>
 			</ul>
 
 			{/* ! HAMBURGER MENU ICON */}
-
-			<div className="flex flex-col gap-y-1 md:hidden cursor-pointer relative" onClick={handleMenuShow}>
+			<div className="flex flex-col gap-y-1 lg:hidden cursor-pointer relative" onClick={handleMenuShow}>
 				<div
 					className={`w-7 h-[2px] bg-[#006837] rounded-full duration-300 ${
 						isMenuShown ? "absolute rotate-45 right-2 duration-300 z-50" : ""
@@ -126,49 +110,83 @@ const NavBar = ({ scrollToSection, services, hero, contact, about, resources }) 
 			</div>
 
 			{/* HAMNURGER MENU */}
-
 			<div
-				className={`fixed right-0 top-0 bottom-0 left-14 bg-white duration-500 md:hidden flex items-end pt-32 text-right flex-col dark:bg-black ${
+				className={`fixed inset-0 bg-transparent duration-500 overflow-auto lg:hidden modal ${
 					isMenuShown ? "translate-x-0" : "translate-x-[200%]"
 				}`}>
-				<ul className="flex flex-col gap-y-4 border-r-2 border-r-[#006837] border-solid mr-6 pr-5 py-4">
-					<li className="px-2 py-2">
-						<button className="hover:text-[#00A651] duration-300 cursor-pointer" onClick={() => scrollToSection(hero)}>
+				<div className="bg-white/100 pt-32 flex flex-col items-end text-right min-h-full dark:bg-black/100 ml-40">
+					<ul className="flex flex-col items-end gap-y-4 border-r-2 border-r-[#006837] border-solid mr-6 py-4">
+						<button
+							className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
+							onClick={() => scrollToSection(hero)}>
+							<House className="mr-2" />
 							Home
 						</button>
-					</li>
-					<li className="px-2 py-2 cursor-pointer">
-						<button
-							className="hover:text-[#00A651] duration-300 cursor-pointer"
-							onClick={() => scrollToSection(services)}>
-							Services
-						</button>
-					</li>
-					<li className="px-2 py-2 cursor-pointer">
-						<button
-							className="hover:text-[#00A651] duration-300 cursor-pointer"
-							onClick={() => scrollToSection(resources)}>
-							Resorces & Tools
-						</button>
-					</li>
-					<li className="px-2 py-2 cursor-pointer">
-						<button className="hover:text-[#00A651] duration-300 cursor-pointer" onClick={() => scrollToSection(about)}>
-							About
-						</button>
-					</li>
 
-					<li className="px-2 py-2 rounded-full cursor-pointer">
+						<div className="flex flex-col items-end">
+							<li
+								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
+								onClick={() => toggleDropdown("about")}>
+								<User className="mr-2" />
+								About
+							</li>
+							{openDropdown === "about" && <EcosystemDropDownSS />}
+						</div>
+
+						<div className="flex flex-col items-end">
+							<li
+								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
+								onClick={() => toggleDropdown("ecosystem")}>
+								<Globe className="mr-2" />
+								Ecosystem
+							</li>
+							{openDropdown === "ecosystem" && <EcosystemDropDownSS />}
+						</div>
+
+						<div className="flex flex-col items-end">
+							<li
+								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
+								onClick={() => toggleDropdown("solutions")}>
+								<ShieldPlus className="mr-2" />
+								Solutions
+							</li>
+							{openDropdown === "solutions" && <SolutionDropDownSS />}
+						</div>
+						<div className="flex flex-col items-end">
+							<li
+								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
+								onClick={() => toggleDropdown("learn")}>
+								<BookOpenText className="mr-2" />
+								Learn
+							</li>
+							{openDropdown === "learn" && <EcosystemDropDownSS />}
+						</div>
+						<div className="flex flex-col items-end">
+							<li
+								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
+								onClick={() => toggleDropdown("careers")}>
+								<GraduationCap className="mr-2" />
+								Careers
+							</li>
+							{openDropdown === "careers" && <EcosystemDropDownSS />}
+						</div>
+
 						<button
-							className="hover:text-[#00A651] duration-300 cursor-pointer"
+							className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
 							onClick={() => scrollToSection(contact)}>
+							<Contact className="mr-2" />
 							Contact
 						</button>
-					</li>
-				</ul>
 
-				<footer className="w-full mt-auto bg-[#006837] flex justify-center items-center py-5 text-white font-OpenSans">
-					&copy; Marcoby {date}
-				</footer>
+						<div className="flex px-10 py-2 cursor-pointer w-fit">
+							<button className="duration-300 cursor-pointer px-10 py-2 bg-[#00A651] rounded-full">Login</button>
+						</div>
+					</ul>
+
+					<footer className="w-full mt-auto bg-[#006837] flex justify-center items-center py-5 text-white font-OpenSans">
+						&copy; Marcoby {date}
+					</footer>
+				</div>
 			</div>
 		</nav>
 	);

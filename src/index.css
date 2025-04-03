@@ -34,6 +34,7 @@
 	/* ANIMATION */
 	--animate-slide: slide 20s linear infinite;
 	--animate-slideRight: slideRight 20s linear infinite;
+	--animate-coloring: coloring 10s ease infinite;
 
 	@keyframes slide {
 		0% {
@@ -43,6 +44,7 @@
 			transform: translateX(-100%);
 		}
 	}
+
 	@keyframes slideRight {
 		0% {
 			transform: translateX(-100%);
@@ -51,8 +53,33 @@
 			transform: translateX(0%);
 		}
 	}
+
+	@keyframes coloring {
+		0% {
+			background-position: 0% 25%;
+		}
+		25% {
+			background-position: 25% 50%;
+		}
+		50% {
+			background-position: 50% 100%;
+		}
+		100% {
+			background-position: 0% 25%;
+		}
+	}
 }
 
 @utility paused {
 	animation-play-state: paused;
+}
+
+@layer {
+	.modal {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.modal::-webkit-scrollbar {
+		display: none;
+	}
 }

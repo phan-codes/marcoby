@@ -39,11 +39,11 @@ function App() {
 			/>
 			<div>
 				<Hero elementRef={hero} />
-				<Partners />
-				<Partners2 />
 				<Services elementRef={services} />
 				<About elementRef={about} />
-				<Reviews />
+				<Partners />
+				<Partners2 />
+				{/* <Reviews /> */}
 				<NetworkMetrics elementRef={resources} />
 				<SiteChecker />
 				<NetworkNewsFeed />

@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "./Carousel";
-import reviews from "../reviews/index.ts";
+import reviews from "../utils/review";
 
 const Reviews = () => {
 	return (

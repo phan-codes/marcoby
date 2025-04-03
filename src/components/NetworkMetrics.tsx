@@ -46,7 +46,7 @@ const NetworkMetrics = ({ elementRef }) => {
 				{performanceList.map((performance) => (
 					<div
 						key={performance.name}
-						className="flex flex-col items-start p-5 gap-4 border-none rounded-md shadow-md basis-[25%] w-full dark:shadow-gray-900 duration-200 hover:border hover:border-solid hover:border-[#00A651]">
+						className="flex flex-col items-start p-5 gap-4 border-none rounded-md basis-[25%] w-full shadow-[0px_0px_8px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_10px_rgb(17,24,39)] duration-200">
 						<Reveal>
 							<div className="text-[#00A651]">{performance.icon}</div>
 						</Reveal>

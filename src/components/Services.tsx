@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import { Layers, Zap, Box } from "lucide-react";
 import Reveal from "./Reveal";
+import catalystLogo from "../assets/images/catalyst-logo.png";
+import nexusLogo from "../assets/images/nexus-logo.png";
+import pulseLogo from "../assets/images/pulse-logo.png";
 
 const Services = ({ elementRef }) => {
 	const servicesList = [
@@ -8,20 +11,22 @@ const Services = ({ elementRef }) => {
 			name: "Pulse",
 			description: "Value added reseller platform for hardware, software, and hosting solutions.",
 			href: "www.pulse.marcoby.com",
-			icon: <Box className="w-8 h-8" />,
+			// icon: <Box className="w-8 h-8" />,
+			icon: pulseLogo,
 		},
 		{
 			name: "Catalyst",
 			description: "Managed IT services tailored to businesses of all sizes.",
 			href: "www.catalyst.marcoby.com",
-
-			icon: <Zap className="w-8 h-8" />,
+			// icon: <Zap className="w-8 h-8" />,
+			icon: catalystLogo,
 		},
 		{
 			name: "Nexus",
 			description: "Headquarters-as-a-Service platform intergrating tools, workflows and insights.",
 			href: "www.nexus.marcoby.com",
-			icon: <Layers className="w-8 h-8" />,
+			// icon: <Layers className="w-8 h-8" />,
+			icon: nexusLogo,
 		},
 	];
 
@@ -40,9 +45,9 @@ const Services = ({ elementRef }) => {
 				{servicesList.map((service) => (
 					<div
 						key={service.name}
-						className="flex flex-col items-start p-5 gap-4 border-none rounded-md w-full shadow-md basis-[33.3%] dark:shadow-gray-900">
+						className="flex flex-col items-start p-5 gap-4 border-none rounded-md w-full basis-[33.3%] shadow-[0px_0px_8px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_10px_rgb(17,24,39)]">
 						<Reveal>
-							<div className="text-[#00A651]">{service.icon}</div>
+							<img className="w-20 h-20" src={service.icon} alt={service.name} />
 						</Reveal>
 						<Reveal>
 							<h1 className="font-Roboto">{service.name}</h1>

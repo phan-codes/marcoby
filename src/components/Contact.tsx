@@ -45,7 +45,7 @@ const Contact = ({ elementRef }) => {
 					{contactDetails.map(({ details, href, icon, type }) => (
 						<div
 							key={type}
-							className="flex flex-col items-start p-5 gap-2 border-none rounded-md shadow-md basis-[33.3%] dark:shadow-gray-900">
+							className="flex flex-col items-start p-5 gap-2 border-none rounded-md basis-[33.3%] shadow-[0px_0px_8px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_10px_rgb(17,24,39)]">
 							<Reveal>
 								<div className="text-[#006837] mb-2">{icon}</div>
 								<h1 className="font-Roboto">{type}</h1>

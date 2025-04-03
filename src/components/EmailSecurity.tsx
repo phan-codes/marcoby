@@ -33,7 +33,7 @@ const EmailSecurity = () => {
 				{protocolList.map((protocol, index) => (
 					<div
 						key={index}
-						className="flex flex-col items-start p-5 gap-4 border-none rounded-md shadow-md basis-[33.3%] dark:shadow-gray-900 duration-200 hover:border hover:border-solid hover:border-[#00A651]">
+						className="flex flex-col items-start p-5 gap-4 border-none rounded-md basis-[33.3%] shadow-[0px_0px_8px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_10px_rgb(17,24,39)]">
 						<Reveal>
 							<div className="text-[#00A651]">{protocol.icon}</div>
 						</Reveal>

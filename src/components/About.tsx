@@ -27,7 +27,7 @@ const About = ({ elementRef }) => {
 				</Reveal>
 
 				<div className="flex flex-col gap-10 md:flex-row">
-					<div className="basis-[50%] flex justify-center items-center rounded-lg shadow-lg dark:shadow-gray-900">
+					<div className="basis-[50%] flex justify-center items-center rounded-lg shadow-[0px_0px_8px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_10px_rgb(17,24,39)]">
 						<Reveal>
 							<img src={aboutImg} alt="logo" />
 						</Reveal>

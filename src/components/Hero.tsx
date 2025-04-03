@@ -7,7 +7,7 @@ const Hero = ({ elementRef }) => {
 		<section
 			className="relative pt-28 px-2 flex justify-center items-center h-screen w-full text-center overflow-hidden md:pt-44 md:pb-20"
 			ref={elementRef}>
-			<video
+			{/* <video
 				autoPlay
 				loop
 				muted
@@ -15,7 +15,11 @@ const Hero = ({ elementRef }) => {
 				<source src={herobg} type="video/mp4" />
 			</video>
 
-			<div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_top,rgba(228,240,236,0.8),rgba(228,240,236,0.7),rgba(228,240,236,0.6))] dark:bg-[linear-gradient(to_top,rgba(0,0,0,0.9),rgba(0,0,0,0.8),rgba(0,0,0,0.7))] z-1"></div>
+			<div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_top,rgba(228,240,236,0.8),rgba(228,240,236,0.7),rgba(228,240,236,0.6))] dark:bg-[linear-gradient(to_top,rgba(0,0,0,0.9),rgba(0,0,0,0.8),rgba(0,0,0,0.7))] z-1"></div> */}
+
+			<div className="absolute w-full h-full overflow-hidden bg-gradient-to-r from-[#00A651] via-[#013a1f] to-[#00A651] animate-coloring bg-[300%,300%] ">
+				<div className="absolute dark:bg-black bg-white w-full h-full -skew-y-[25deg] "></div>
+			</div>
 
 			<Reveal>
 				<div className="relative flex flex-col items-center justify-center gap-y-7 max-w-[600px] text-center z-[2]">
