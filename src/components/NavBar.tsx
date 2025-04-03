@@ -114,7 +114,7 @@ const NavBar = ({ scrollToSection, hero, contact }) => {
 				className={`fixed inset-0 bg-transparent duration-500 overflow-auto lg:hidden modal ${
 					isMenuShown ? "translate-x-0" : "translate-x-[200%]"
 				}`}>
-				<div className="bg-white/100 pt-32 flex flex-col items-end text-right min-h-full dark:bg-black/100 ml-40">
+				<div className="bg-white/100 pt-32 pl-5 flex flex-col items-end text-right min-h-full dark:bg-black/100 ml-10 md:ml-40">
 					<ul className="flex flex-col items-end gap-y-4 border-r-2 border-r-[#006837] border-solid mr-6 py-4">
 						<button
 							className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
