@@ -10,6 +10,9 @@ import AboutDropDown from "./DropDowns/AboutDropDown";
 import CareerDropDown from "./DropDowns/CareerDropDown";
 import EcosystemDropDownSS from "./DropDownSS/EcosystemDropDownSS";
 import SolutionDropDownSS from "./DropDownSS/SolutionDropDownSS";
+import AboutDropDownSS from "./DropDownSS/AboutDropDownSS";
+import LearnDropDownSS from "./DropDownSS/LearnDropDownSS";
+import CareerDropDownSS from "./DropDownSS/CareerDropDownSS";
 
 const NavBar = ({ scrollToSection, hero, contact }) => {
 	// ! FOR CLICK EVENT OF HAMBURGER MENU
@@ -19,14 +22,15 @@ const NavBar = ({ scrollToSection, hero, contact }) => {
 		setIsMenuShown(!isMenuShown);
 	};
 
-	const [openDropdown, setOpenDropdown] = useState(null); // Store active dropdown
+	const [openDropdown, setOpenDropdown] = useState(null);
+	const [activeNav, setActiveNav] = useState<string | null>(null);
 
 	const toggleDropdown = (menu: any) => {
-		setOpenDropdown(openDropdown === menu ? null : menu); // Toggle only one at a time
+		setOpenDropdown(openDropdown === menu ? null : menu);
 	};
-
-	// DATE VARIABLE FOR FOOTER
-	const date = new Date().getFullYear();
+	const handleNavClick = (nav: string) => {
+		setActiveNav(nav);
+	};
 
 	return (
 		<nav className="fixed right-0 left-0 z-3 bg-white px-5 flex items-center justify-between shadow-sm dark:bg-black lg:backdrop-blur-2xl lg:bg-white/50 lg:dark:bg-black/50">
@@ -97,83 +101,144 @@ const NavBar = ({ scrollToSection, hero, contact }) => {
 			</ul>
 
 			{/* ! HAMBURGER MENU ICON */}
-			<div className="flex flex-col gap-y-1 lg:hidden cursor-pointer relative" onClick={handleMenuShow}>
-				<div
-					className={`w-7 h-[2px] bg-[#006837] rounded-full duration-300 ${
-						isMenuShown ? "absolute rotate-45 right-2 duration-300 z-50" : ""
-					}`}></div>
-				<div className={`w-10 h-[2px] bg-[#006837] rounded-full duration-300 ${isMenuShown ? "hidden" : ""}`}></div>
-				<div
-					className={`w-7 h-[2px] bg-[#006837] rounded-full self-end duration-300 ${
-						isMenuShown ? "absolute -rotate-45 right-2 duration-300 z-50 " : ""
-					}`}></div>
+			<div
+				className={`${
+					isMenuShown
+						? "fixed z-50 left-10 top-0 w-full py-10 shadow-sm bg-white lg:hidden md:left-40 dark:bg-black"
+						: ""
+				}`}>
+				<div className="flex flex-col gap-y-1 lg:hidden cursor-pointer relative" onClick={handleMenuShow}>
+					<div
+						className={`w-7 h-[2px] bg-[#006837] rounded-full duration-300 ${
+							isMenuShown ? "absolute rotate-45 right-16 duration-300 md:right-48" : ""
+						}`}></div>
+					<div className={`w-10 h-[2px] bg-[#006837] rounded-full duration-300 ${isMenuShown ? "hidden" : ""}`}></div>
+					<div
+						className={`w-7 h-[2px] bg-[#006837] rounded-full self-end duration-300 ${
+							isMenuShown ? "absolute -rotate-45 right-16 duration-300 z-50 md:right-48" : ""
+						}`}></div>
+				</div>
 			</div>
 
 			{/* HAMNURGER MENU */}
 			<div
-				className={`fixed inset-0 bg-transparent duration-500 overflow-auto lg:hidden modal ${
+				className={`fixed inset-0 bg-transparent duration-500  overflow-auto lg:hidden modal ${
 					isMenuShown ? "translate-x-0" : "translate-x-[200%]"
 				}`}>
-				<div className="bg-white/100 pt-32 pl-5 flex flex-col items-end text-right min-h-full dark:bg-black/100 ml-10 md:ml-40">
+				<div className="bg-white/100 pt-32 pl-5 flex flex-col items-end text-right min-h-full shadow-[0px_3px_10px_rgba(0,0,0,0.2)]  dark:bg-black/100 ml-10 md:ml-40">
 					<ul className="flex flex-col items-end gap-y-4 border-r-2 border-r-[#006837] border-solid mr-6 py-4">
 						<button
-							className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
-							onClick={() => scrollToSection(hero)}>
+							className={`flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5] dark:hover:bg-[#f3f9f512] ${
+								activeNav === "home" ? "text-[#00A651] font-bold" : "hover:text-[#00A651]"
+							}`}
+							onClick={() => {
+								scrollToSection(hero);
+								handleNavClick("home");
+								setIsMenuShown(false);
+							}}>
 							<House className="mr-2" />
 							Home
 						</button>
 
 						<div className="flex flex-col items-end">
-							<li
-								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
-								onClick={() => toggleDropdown("about")}>
+							<button
+								className={`flex px-10 items-center py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5] dark:hover:bg-[#f3f9f512] ${
+									activeNav === "about" ? "text-[#00A651] font-bold" : "hover:text-[#00A651]"
+								}`}
+								onClick={() => {
+									toggleDropdown("about");
+									handleNavClick("about");
+								}}>
 								<User className="mr-2" />
 								About
-							</li>
-							{openDropdown === "about" && <EcosystemDropDownSS />}
+								<span className={`duration-300 ml-2 ${openDropdown === "about" ? "rotate-180" : "rotate-0"}`}>
+									<ChevronDown className="h-3 w-3" />
+								</span>
+							</button>
+							{openDropdown === "about" && <AboutDropDownSS />}
 						</div>
 
 						<div className="flex flex-col items-end">
 							<li
-								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
-								onClick={() => toggleDropdown("ecosystem")}>
+								className={`flex items-center px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5] dark:hover:bg-[#f3f9f512] ${
+									activeNav === "ecosystem" ? "text-[#00A651] font-bold" : "hover:text-[#00A651]"
+								}`}
+								onClick={() => {
+									toggleDropdown("ecosystem");
+									handleNavClick("ecosystem");
+								}}>
 								<Globe className="mr-2" />
 								Ecosystem
+								<span className={`duration-300 ml-2 ${openDropdown === "ecosystem" ? "rotate-180" : "rotate-0"}`}>
+									<ChevronDown className="h-3 w-3" />
+								</span>
 							</li>
 							{openDropdown === "ecosystem" && <EcosystemDropDownSS />}
 						</div>
 
 						<div className="flex flex-col items-end">
 							<li
-								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
-								onClick={() => toggleDropdown("solutions")}>
+								className={`flex items-center px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5] dark:hover:bg-[#f3f9f512] ${
+									activeNav === "solutions" ? "text-[#00A651] font-bold" : "hover:text-[#00A651]"
+								}`}
+								onClick={() => {
+									toggleDropdown("solutions");
+									handleNavClick("solutions");
+								}}>
 								<ShieldPlus className="mr-2" />
 								Solutions
+								<span className={`duration-300 ml-2 ${openDropdown === "solutions" ? "rotate-180" : "rotate-0"}`}>
+									<ChevronDown className="h-3 w-3" />
+								</span>
 							</li>
 							{openDropdown === "solutions" && <SolutionDropDownSS />}
 						</div>
+
 						<div className="flex flex-col items-end">
 							<li
-								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
-								onClick={() => toggleDropdown("learn")}>
+								className={`flex items-center px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5] dark:hover:bg-[#f3f9f512] ${
+									activeNav === "learn" ? "text-[#00A651] font-bold" : "hover:text-[#00A651]"
+								}`}
+								onClick={() => {
+									toggleDropdown("learn");
+									handleNavClick("learn");
+								}}>
 								<BookOpenText className="mr-2" />
 								Learn
+								<span className={`duration-300 ml-2 ${openDropdown === "learn" ? "rotate-180" : "rotate-0"}`}>
+									<ChevronDown className="h-3 w-3" />
+								</span>
 							</li>
-							{openDropdown === "learn" && <EcosystemDropDownSS />}
+							{openDropdown === "learn" && <LearnDropDownSS />}
 						</div>
+
 						<div className="flex flex-col items-end">
 							<li
-								className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
-								onClick={() => toggleDropdown("careers")}>
+								className={`flex items-center px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5] dark:hover:bg-[#f3f9f512] ${
+									activeNav === "careers" ? "text-[#00A651] font-bold" : "hover:text-[#00A651]"
+								}`}
+								onClick={() => {
+									toggleDropdown("careers");
+									handleNavClick("careers");
+								}}>
 								<GraduationCap className="mr-2" />
 								Careers
+								<span className={`duration-300 ml-2 ${openDropdown === "careers" ? "rotate-180" : "rotate-0"}`}>
+									<ChevronDown className="h-3 w-3" />
+								</span>
 							</li>
-							{openDropdown === "careers" && <EcosystemDropDownSS />}
+							{openDropdown === "careers" && <CareerDropDownSS />}
 						</div>
 
 						<button
-							className="flex px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5]"
-							onClick={() => scrollToSection(contact)}>
+							className={`flex items-center px-10 py-2 cursor-pointer w-fit hover:text-[#00A651] hover:bg-[#f5f9f5] dark:hover:bg-[#f3f9f512] ${
+								activeNav === "contact" ? "text-[#00A651] font-bold" : "hover:text-[#00A651]"
+							}`}
+							onClick={() => {
+								scrollToSection(contact);
+								handleNavClick("contact");
+								setIsMenuShown(false);
+							}}>
 							<Contact className="mr-2" />
 							Contact
 						</button>
@@ -182,10 +247,6 @@ const NavBar = ({ scrollToSection, hero, contact }) => {
 							<button className="duration-300 cursor-pointer px-10 py-2 bg-[#00A651] rounded-full">Login</button>
 						</div>
 					</ul>
-
-					<footer className="w-full mt-auto bg-[#006837] flex justify-center items-center py-5 text-white font-OpenSans">
-						&copy; Marcoby {date}
-					</footer>
 				</div>
 			</div>
 		</nav>

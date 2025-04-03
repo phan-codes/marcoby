@@ -18,7 +18,7 @@ const Hero = ({ elementRef }) => {
 			<div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_top,rgba(228,240,236,0.8),rgba(228,240,236,0.7),rgba(228,240,236,0.6))] dark:bg-[linear-gradient(to_top,rgba(0,0,0,0.9),rgba(0,0,0,0.8),rgba(0,0,0,0.7))] z-1"></div> */}
 
 			<div className="absolute w-full h-full overflow-hidden bg-gradient-to-r from-[#00A651] via-[#013a1f] to-[#00A651] animate-coloring bg-[300%,300%] ">
-				<div className="absolute dark:bg-black bg-white w-full h-full -skew-y-[25deg] "></div>
+				<div className="absolute dark:bg-black bg-white w-full h-full -skew-y-[40deg] md:-skew-y-[25deg]"></div>
 			</div>
 
 			<Reveal>

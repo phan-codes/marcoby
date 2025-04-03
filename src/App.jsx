@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import Services from "./components/Services";
-import Reviews from "./components/Reviews";
+// import Reviews from "./components/Reviews";
 import NetworkMetrics from "./components/NetworkMetrics";
 import EmailSecurity from "./components/EmailSecurity";
 import SiteChecker from "./components/SiteChecker";
