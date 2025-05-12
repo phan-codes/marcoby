@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 
 const About = ({ elementRef }) => {
 	return (
-		<section className="relative mt-10 flex flex-col pt-10 items-center pb-24 px-5 md:mt-32" ref={elementRef}>
+		<section className="relative mt-10 flex flex-col py-10 items-center px-5 md:mt-32" ref={elementRef}>
 			<video
 				autoPlay
 				loop
@@ -18,7 +18,7 @@ const About = ({ elementRef }) => {
 
 			<div className="relative z-2">
 				<Reveal>
-					<div className="flex flex-col items-center gap-3 mb-14">
+					<div className="flex flex-col items-center gap-3 mb-6">
 						<h1 className="font-OpenSans text-[#00A651] rounded-full px-3 py-1 bg-[#e4f0ec] w-fit dark:bg-[#e4f0ec20]">
 							Our Story
 						</h1>
@@ -26,13 +26,13 @@ const About = ({ elementRef }) => {
 					</div>
 				</Reveal>
 
-				<div className="flex flex-col gap-10 md:flex-row">
-					<div className="basis-[50%] flex justify-center items-center rounded-lg shadow-[0px_0px_8px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_10px_rgb(17,24,39)]">
+				<div className="flex flex-col gap-5 md:flex-row">
+					<div className="flex justify-center items-center rounded-lg shadow-[0px_0px_8px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_10px_rgb(17,24,39)] md:basis-[50%]">
 						<Reveal>
 							<img src={aboutImg} alt="logo" />
 						</Reveal>
 					</div>
-					<div className="basis-[50%] flex leading-7 flex-col text-gray-600 items-start text-sm text-center px-3 gap-y-5 md:items-start md:text-left dark:text-gray-400">
+					<div className="basis-[50%] flex leading-6 flex-col text-gray-600 items-start text-sm text-center px-3 gap-y-5 md:items-start md:text-left dark:text-gray-400">
 						<Reveal>
 							<p>
 								Founded in 2021, Marcoby was built on the belief that businesses deserve smarter, more integrated

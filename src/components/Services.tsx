@@ -10,21 +10,21 @@ const Services = ({ elementRef }) => {
 		{
 			name: "Pulse",
 			description: "Value added reseller platform for hardware, software, and hosting solutions.",
-			href: "www.pulse.marcoby.com",
+			href: "https://pulse.marcoby.com",
 			// icon: <Box className="w-8 h-8" />,
 			icon: pulseLogo,
 		},
 		{
 			name: "Catalyst",
 			description: "Managed IT services tailored to businesses of all sizes.",
-			href: "www.catalyst.marcoby.com",
+			href: "https://catalyst.marcoby.com",
 			// icon: <Zap className="w-8 h-8" />,
 			icon: catalystLogo,
 		},
 		{
 			name: "Nexus",
 			description: "Headquarters-as-a-Service platform intergrating tools, workflows and insights.",
-			href: "www.nexus.marcoby.com",
+			href: "https://nexus.marcoby.com",
 			// icon: <Layers className="w-8 h-8" />,
 			icon: nexusLogo,
 		},
@@ -56,6 +56,7 @@ const Services = ({ elementRef }) => {
 							<p className="text-xs text-gray-600 leading-5 dark:text-gray-400">{service.description}</p>
 							<a
 								href={service.href}
+								target="_blank"
 								className="text-xs font-OpenSans text-[#006837] hover:text-[#00A651] hover:underline duration-300">
 								Learn more &#8594;
 							</a>

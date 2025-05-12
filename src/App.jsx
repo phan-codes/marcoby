@@ -6,10 +6,10 @@ import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import Services from "./components/Services";
 // import Reviews from "./components/Reviews";
-import NetworkMetrics from "./components/NetworkMetrics";
+// import NetworkMetrics from "./components/NetworkMetrics";
 import EmailSecurity from "./components/EmailSecurity";
-import SiteChecker from "./components/SiteChecker";
-import NetworkNewsFeed from "./components/NetworkNewsFeed";
+// import SiteChecker from "./components/SiteChecker";
+// import NetworkNewsFeed from "./components/NetworkNewsFeed";
 import Partners from "./components/Partners";
 import Partners2 from "./components/Partner2";
 
@@ -39,14 +39,14 @@ function App() {
 			/>
 			<div>
 				<Hero elementRef={hero} />
-				<Services elementRef={services} />
-				<About elementRef={about} />
 				<Partners />
 				<Partners2 />
+				<Services elementRef={services} />
+				<About elementRef={about} />
 				{/* <Reviews /> */}
-				<NetworkMetrics elementRef={resources} />
-				<SiteChecker />
-				<NetworkNewsFeed />
+				{/* <NetworkMetrics elementRef={resources} /> */}
+				{/* <SiteChecker /> */}
+				{/* <NetworkNewsFeed /> */}
 				<EmailSecurity />
 				<Contact elementRef={contact} />
 

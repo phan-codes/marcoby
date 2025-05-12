@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import logo from "../assets/images/logo.png";
 import { BookOpenText, ChevronDown, Contact, Globe, GraduationCap, House, ShieldPlus, User } from "lucide-react";
-import ThemeButton from "./ThemeButton";
+import ThemeButton from "@/components/ThemeButton";
 import EcosystemDropDown from "./DropDowns/EcosystemDropDown";
 import LearnDropDown from "./DropDowns/LearnDropDown";
 import SolutionDropDown from "./DropDowns/SolutionDropDown";
@@ -96,7 +96,7 @@ const NavBar = ({ scrollToSection, hero, contact }) => {
 				</li>
 
 				<li>
-					<button className="duration-300 cursor-pointer px-4 py-2 bg-[#00A651] rounded-full">Login</button>
+					<button className="duration-300 cursor-pointer px-4 py-2 bg-[#00A651] rounded-full">Explore Solutions</button>
 				</li>
 			</ul>
 
@@ -244,7 +244,9 @@ const NavBar = ({ scrollToSection, hero, contact }) => {
 						</button>
 
 						<div className="flex px-10 py-2 cursor-pointer w-fit">
-							<button className="duration-300 cursor-pointer px-10 py-2 bg-[#00A651] rounded-full">Login</button>
+							<button className="duration-300 cursor-pointer px-4 py-2 bg-[#00A651] rounded-full">
+								Explore Solutions
+							</button>
 						</div>
 					</ul>
 				</div>

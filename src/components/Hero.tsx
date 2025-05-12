@@ -1,11 +1,12 @@
 import React from "react";
 import Reveal from "./Reveal";
-import herobg from "../assets/bgvideo.mp4";
+// import herobg from "../assets/bgvideo.mp4";
+// import EcosystemMap from "./EcosystemData";
 
 const Hero = ({ elementRef }) => {
 	return (
 		<section
-			className="relative pt-28 px-2 flex justify-center items-center h-screen w-full text-center overflow-hidden md:pt-44 md:pb-20"
+			className="relative pt-20 px-2 flex justify-center items-center h-screen w-full text-center overflow-hidden md:pt-44 md:pb-20"
 			ref={elementRef}>
 			{/* <video
 				autoPlay
@@ -30,12 +31,13 @@ const Hero = ({ elementRef }) => {
 						Revolutionizing Business Operations
 					</p>
 					<p className="px-1 font-Noto text-sm text-gray-600 dark:text-gray-400">
-						Empowering businesses with intergrated solutions through our innovative Business Operating System.
+						Empowering businesses with Pulse, Catalyst & Nexus--integrated solutions through our innovative Business
+						Operating System.
 					</p>
 					<a
 						href=""
 						className="px-5 py-3 rounded-md bg-[#006837] text-xs font-OpenSans text-white hover:bg-[#00A651] duration-300">
-						Get Started &#8594;
+						Book a 15-min TechCheck &#8594;
 					</a>
 				</div>
 			</Reveal>
